@@ -1,0 +1,50 @@
+[
+  {
+    "category": "Putra",
+    "position": 1,
+    "team": "KMB Besaran",
+    "prize": "Rp 1.100.000 + Trophy"
+  },
+  {
+    "category": "Putra",
+    "position": 2,
+    "team": "Panzer Slegrengan",
+    "prize": "Rp 900.000 + Trophy"
+  },
+  {
+    "category": "Putra",
+    "position": 3,
+    "team": "MBG Tegalombo",
+    "prize": "Rp 700.000 + Trophy"
+  },
+  {
+    "category": "Putra",
+    "position": 4,
+    "team": "Mekarsari Rejoso",
+    "prize": "Rp 500.000 + Trophy"
+  },
+  {
+    "category": "Putri",
+    "position": 1,
+    "team": "Punokawan Jimbung",
+    "prize": "Rp 750.000 + Trophy"
+  },
+  {
+    "category": "Putri",
+    "position": 2,
+    "team": "MVC Kebonagung",
+    "prize": "Rp 450.000 + Trophy"
+  },
+  {
+    "category": "Putri",
+    "position": 3,
+    "team": "Manunggal Krakitan",
+    "prize": "Rp 300.000 + Trophy"
+  },
+  {
+    "category": "Putri",
+    "position": 4,
+    "team": "Gempita Jonggrangan",
+    "prize": "Rp 200.000 + Trophy"
+  }
+]

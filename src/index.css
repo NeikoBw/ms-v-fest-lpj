@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+:root{
+  --primary:#1A1B5E;
+  --secondary:#20C9F3;
+  --accent:#E5007D;
+  --dark:#0B1026;
+  --light:#F8FAFC;
+  --white:#FFFFFF;
+  --gray:#94A3B8;
+
+  --hero-gradient:linear-gradient(
+    135deg,
+    #0B1026 0%,
+    #1A1B5E 40%,
+    #20C9F3 100%
+  );
+
+  --button-gradient:linear-gradient(
+    90deg,
+    #20C9F3,
+    #E5007D
+  );
+
+  --card-gradient:linear-gradient(
+    180deg,
+    #1A1B5E,
+    #283593
+  );
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  margin:0;
+  padding:0;
+  font-family:Inter,sans-serif;
+  background:var(--light);
+  color:var(--dark);
+}
+
+section{
+  padding:90px 0;
+}
+
+.container{
+  max-width:1280px;
+  margin:auto;
+  padding:0 24px;
+}

@@ -1,0 +1,42 @@
+[
+  {
+    "title": "Pembentukan Panitia",
+    "category": "Persiapan",
+    "image": "panitia.jpg"
+  },
+  {
+    "title": "Gotong Royong Lapangan",
+    "category": "Persiapan",
+    "image": "gotongroyong.jpg"
+  },
+  {
+    "title": "Technical Meeting",
+    "category": "Technical Meeting",
+    "image": "tm.jpg"
+  },
+  {
+    "title": "Opening Ceremony",
+    "category": "Pembukaan",
+    "image": "opening.jpg"
+  },
+  {
+    "title": "Pertandingan Penyisihan",
+    "category": "Pertandingan",
+    "image": "match1.jpg"
+  },
+  {
+    "title": "Semifinal",
+    "category": "Pertandingan",
+    "image": "semifinal.jpg"
+  },
+  {
+    "title": "Grand Final",
+    "category": "Final",
+    "image": "final.jpg"
+  },
+  {
+    "title": "Penyerahan Hadiah",
+    "category": "Penutupan",
+    "image": "juara.jpg"
+  }
+]
