@@ -41,17 +41,42 @@ const Hero = () => {
       />
 
       <div className="relative max-w-7xl mx-auto px-6 w-full">
-        <div className="max-w-4xl">
 
-          {/* Logo Mardisantoso */}
+        {/* Logo kanan */}
+        <div className="hidden lg:flex absolute top-8 -right-20 xl:-right-28 items-center gap-5">
+
           <img
             src={logoM}
             alt="Logo Mardisantoso"
-            className="w-32 md:w-40 lg:w-48 mb-8 drop-shadow-2xl"
+            className="w-28 xl:w-32 drop-shadow-2xl"
           />
 
+          <div>
+
+            <p className="uppercase tracking-[0.3em] text-sky-300 text-xs font-semibold mb-1">
+              Organisasi
+            </p>
+
+            <h3 className="text-white font-black text-3xl leading-tight">
+              Karang Taruna
+            </h3>
+
+            <h3 className="text-white font-black text-3xl leading-tight">
+              Mardisantoso
+            </h3>
+
+            <p className="text-slate-300 mt-2">
+              Ngering, Jogonalan, Klaten
+            </p>
+
+          </div>
+
+        </div>
+
+        <div className="max-w-4xl">
+
           <span
-            className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-6"
+            className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-8"
             style={{
               background: "rgba(255,255,255,.12)",
               color: "#FFFFFF",
@@ -61,14 +86,20 @@ const Hero = () => {
             DIGITAL EVENT REPORT
           </span>
 
-          <h1 className="text-6xl md:text-8xl font-black text-white leading-tight">
+          <h1 className="text-6xl md:text-8xl font-black text-white leading-none">
             MS V-FEST
-            <br />
+          </h1>
+
+          <h1 className="text-6xl md:text-8xl font-black text-white mt-2 leading-none">
             2026
           </h1>
 
           <p className="mt-8 text-xl md:text-2xl text-slate-200 leading-relaxed max-w-3xl">
-            Laporan digital pelaksanaan Turnamen Bola Voli Plastik
+            Laporan digital pelaksanaan
+            <span className="font-bold text-white">
+              {" "}
+              Turnamen Bola Voli Plastik
+            </span>{" "}
             yang diselenggarakan oleh
             <span className="font-bold text-white">
               {" "}
@@ -76,70 +107,91 @@ const Hero = () => {
             </span>
             .
           </p>
+{/* Tombol */}
+<div className="flex flex-wrap gap-5 mt-12">
 
-          <div className="flex flex-wrap gap-5 mt-12">
+  <a
+    href="/LPJ-MS-VFEST-2026.pdf"
+    download
+    className="px-8 py-4 rounded-full text-white font-bold transition hover:scale-105 flex items-center gap-3"
+    style={{
+      background: "linear-gradient(90deg,#20C9F3,#E5007D)",
+    }}
+  >
+    📄 Download LPJ
+  </a>
 
-            <a
-              href="#tentang"
-              className="px-8 py-4 rounded-full text-white font-bold transition hover:scale-105"
-              style={{
-                background: "linear-gradient(90deg,#20C9F3,#E5007D)",
-              }}
-            >
-              Jelajahi LPJ
-            </a>
+  <a
+    href="#dokumentasi"
+    className="px-8 py-4 rounded-full border border-white text-white hover:bg-white hover:text-[#1A1B5E] transition"
+  >
+    📸 Lihat Dokumentasi
+  </a>
 
-            <a
-              href="#dokumentasi"
-              className="px-8 py-4 rounded-full border border-white text-white hover:bg-white hover:text-[#1A1B5E] transition"
-            >
-              Lihat Dokumentasi
-            </a>
+</div>
+          {/* Informasi Event */}
 
-          </div>
+<div className="mt-20 max-w-3xl">
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-6 mt-20">
+  <div
+    className="backdrop-blur-xl rounded-3xl px-8 py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-6"
+    style={{
+      background: "rgba(255,255,255,.08)",
+      border: "1px solid rgba(255,255,255,.12)",
+    }}
+  >
 
-            {[
-              {
-                value: "22",
-                label: "Tim",
-              },
-              {
-                value: "26",
-                label: "Pertandingan",
-              },
-              {
-                value: "50",
-                label: "Panitia",
-              },
-              {
-                value: "16",
-                label: "Sponsor",
-              },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="backdrop-blur-xl rounded-2xl p-6"
-                style={{
-                  background: "rgba(255,255,255,.08)",
-                  border: "1px solid rgba(255,255,255,.12)",
-                }}
-              >
-                <h2 className="text-4xl font-black text-white">
-                  {item.value}
-                </h2>
+    {/* Tanggal */}
+    <div>
+      <p className="text-sky-300 text-xs font-semibold tracking-[0.25em] uppercase">
+        Tanggal Pelaksanaan
+      </p>
 
-                <p className="text-slate-300 mt-2">
-                  {item.label}
-                </p>
-              </div>
-            ))}
+      <h3 className="text-white text-2xl md:text-3xl font-black mt-2">
+        20 Juli – 1 Agustus 2026
+      </h3>
+    </div>
 
-          </div>
+    {/* Garis */}
+    <div className="hidden md:block w-px h-14 bg-white/15"></div>
+
+    {/* Lokasi */}
+    <div>
+      <p className="text-sky-300 text-xs font-semibold tracking-[0.25em] uppercase">
+        Lokasi
+      </p>
+
+      <h3 className="text-white text-xl font-bold mt-2">
+        Ngering, Jogonalan
+      </h3>
+
+      <p className="text-slate-300 text-sm">
+        Kabupaten Klaten
+      </p>
+    </div>
+
+    {/* Garis */}
+    <div className="hidden md:block w-px h-14 bg-white/15"></div>
+
+    {/* Event */}
+    <div>
+      <p className="text-sky-300 text-xs font-semibold tracking-[0.25em] uppercase">
+        Event
+      </p>
+
+      <h3 className="text-white text-xl font-bold mt-2">
+        Turnamen Bola Voli Plastik
+      </h3>
+    </div>
+
+  </div>
+
+</div>
 
         </div>
+
       </div>
+
     </section>
   );
 };

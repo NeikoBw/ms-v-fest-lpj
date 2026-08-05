@@ -9,7 +9,17 @@ const gallery = [
       }
     ),
   },
-
+  {
+    title: "Gotong Royong",
+    images: import.meta.glob(
+        "../assets/Dokumentasi/Gotong Royong/*.{jpg,jpeg,png,JPG, JPEG,PNG}",
+        {
+            eager: true,
+            import: "default",
+        }
+    )
+  },
+  
   {
     title: "Pembukaan",
     images: import.meta.glob(

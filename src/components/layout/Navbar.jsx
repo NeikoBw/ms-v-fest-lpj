@@ -79,16 +79,6 @@ const Navbar = () => {
             </li>
           <li>
             <a
-              href="#dokumentasi"
-              className="hover:text-cyan-300 duration-300"
-              style={{ color: "#FFFFFF" }}
-            >
-              Dokumentasi
-            </a>
-          </li>
-
-          <li>
-            <a
               href="#hasil"
               className="hover:text-cyan-300 duration-300"
               style={{ color: "#FFFFFF" }}
@@ -106,6 +96,15 @@ const Navbar = () => {
               Sponsor
             </a>
           </li>
+          <li>
+            <a
+              href="#donatur"
+              className="hover:text-cyan-300 duration-300"
+              style={{ color: "#FFFFFF" }}
+            >
+              Donatur
+            </a>
+          </li>
 
           <li>
             <a
@@ -116,7 +115,15 @@ const Navbar = () => {
               Keuangan
             </a>
           </li>
-
+          <li>
+            <a
+              href="#dokumentasi"
+              className="hover:text-cyan-300 duration-300"
+              style={{ color: "#FFFFFF" }}
+            >
+              Dokumentasi
+            </a>
+          </li>
         </ul>
 
       </div>
