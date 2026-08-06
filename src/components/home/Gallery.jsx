@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import gallery from "../../data/gallery";
+import videos from "../../data/video";
 
 const Gallery = () => {
   const [selectedAlbum, setSelectedAlbum] = useState(null);
@@ -90,6 +91,19 @@ const Gallery = () => {
             </p>
 
           </div>
+          {/* AFTER MOVIE */}
+          <div className="mb-20">
+            <h3 className="text-3xl font-black text-center text-[#1A1B5E] mb-8">🎥 After Movie</h3>
+            {videos.map((item) => (
+              <div key={item.title}className="max-w-5xl mx-auto mb-10 rounded-3xl overflow-hidden shadow-2xl">
+                <video
+                controls
+                preload="metadata"
+                className="w-full aspect-video object-cover rounded-3x1">
+                  <source src={item.video} type="video/mp4" />Browser Anda tidak mendukung video.</video>
+                  <div className="p-6 bg-white">
+                    <h4 className="text-2xl font-bold text-[#1A1B5E]">{item.title}</h4></div></div>))}
+                    </div>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-7">
 

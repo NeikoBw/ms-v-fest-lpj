@@ -103,7 +103,7 @@ const Hero = () => {
             yang diselenggarakan oleh
             <span className="font-bold text-white">
               {" "}
-              Karang Taruna Mardisantoso Ngering
+              Karang Taruna Mardisantoso Ngering bersama tim bola voli Satria Muda Ngering
             </span>
             .
           </p>

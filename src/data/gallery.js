@@ -30,11 +30,30 @@ const gallery = [
       }
     ),
   },
-
   {
-    title: "Final",
+    title: "Pertandingan",
     images: import.meta.glob(
-      "../assets/Dokumentasi/Final/*.{jpg,jpeg,png,JPG,JPEG,PNG}",
+      "../assets/Dokumentasi/Pertandingan/*.{jpg,jpeg,png,JPG,JPEG,PNG}",
+      {
+        eager: true,
+        import: "default",
+      }
+    ),
+  },
+  {
+    title: "Grand Final",
+    images: import.meta.glob(
+      "../assets/Dokumentasi/Grand Final/*.{jpg,jpeg,png,JPG,JPEG,PNG}",
+      {
+        eager: true,
+        import: "default",
+      }
+    ),
+  },
+  {
+    title: "Penyerahan Hadiah",
+    images: import.meta.glob(
+      "../assets/Dokumentasi/Penutupan/*.{jpg,jpeg,png,JPG,JPEG,PNG}",
       {
         eager: true,
         import: "default",
