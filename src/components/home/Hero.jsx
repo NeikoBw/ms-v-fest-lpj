@@ -1,5 +1,6 @@
 import logoM from "../../assets/logo mardi.png";
 import bgHero from "../../assets/Bg.jpeg";
+import lpjPdf from "../../assets/LPJ MS V-FEST 2026.pdf";
 
 const Hero = () => {
   return (
@@ -21,7 +22,11 @@ const Hero = () => {
         backgroundRepeat: "no-repeat",
       }}
     >
-      {/* Glow Effect */}
+
+      {/* =========================
+          GLOW EFFECT
+      ========================== */}
+
       <div
         className="absolute w-[500px] h-[500px] rounded-full blur-3xl opacity-20"
         style={{
@@ -40,9 +45,16 @@ const Hero = () => {
         }}
       />
 
+      {/* =========================
+          MAIN CONTAINER
+      ========================== */}
+
       <div className="relative max-w-7xl mx-auto px-6 w-full">
 
-        {/* Logo kanan */}
+        {/* =========================
+            LOGO KARANG TARUNA
+        ========================== */}
+
         <div className="hidden lg:flex absolute top-8 -right-20 xl:-right-28 items-center gap-5">
 
           <img
@@ -73,7 +85,13 @@ const Hero = () => {
 
         </div>
 
+        {/* =========================
+            HERO CONTENT
+        ========================== */}
+
         <div className="max-w-4xl">
+
+          {/* Badge */}
 
           <span
             className="inline-block px-4 py-2 rounded-full text-sm font-semibold mb-8"
@@ -86,6 +104,8 @@ const Hero = () => {
             DIGITAL EVENT REPORT
           </span>
 
+          {/* Title */}
+
           <h1 className="text-6xl md:text-8xl font-black text-white leading-none">
             MS V-FEST
           </h1>
@@ -94,99 +114,129 @@ const Hero = () => {
             2026
           </h1>
 
+          {/* Description */}
+
           <p className="mt-8 text-xl md:text-2xl text-slate-200 leading-relaxed max-w-3xl">
+
             Laporan digital pelaksanaan
+
             <span className="font-bold text-white">
               {" "}
               Turnamen Bola Voli Plastik
             </span>{" "}
+
             yang diselenggarakan oleh
+
             <span className="font-bold text-white">
               {" "}
               Karang Taruna Mardisantoso Ngering bersama tim bola voli Satria Muda Ngering
             </span>
             .
+
           </p>
-{/* Tombol */}
-<div className="flex flex-wrap gap-5 mt-12">
 
-  <a
-    href="/LPJ-MS-VFEST-2026.pdf"
-    download
-    className="px-8 py-4 rounded-full text-white font-bold transition hover:scale-105 flex items-center gap-3"
-    style={{
-      background: "linear-gradient(90deg,#20C9F3,#E5007D)",
-    }}
-  >
-    📄 Download LPJ
-  </a>
+          {/* =========================
+              BUTTON
+          ========================== */}
 
-  <a
-    href="#dokumentasi"
-    className="px-8 py-4 rounded-full border border-white text-white hover:bg-white hover:text-[#1A1B5E] transition"
-  >
-    📸 Lihat Dokumentasi
-  </a>
+          <div className="flex flex-wrap gap-5 mt-12">
 
-</div>
-          {/* Informasi Event */}
+            {/* DOWNLOAD LPJ */}
 
-<div className="mt-20 max-w-3xl">
+            <a
+              href={lpjPdf}
+              download="LPJ-MS-VFEST-2026.pdf"
+              className="px-8 py-4 rounded-full text-white font-bold transition hover:scale-105 flex items-center gap-3 shadow-lg"
+              style={{
+                background:
+                  "linear-gradient(90deg,#20C9F3,#E5007D)",
+              }}
+            >
+              📄 Download LPJ
+            </a>
 
-  <div
-    className="backdrop-blur-xl rounded-3xl px-8 py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-6"
-    style={{
-      background: "rgba(255,255,255,.08)",
-      border: "1px solid rgba(255,255,255,.12)",
-    }}
-  >
+            {/* DOKUMENTASI */}
 
-    {/* Tanggal */}
-    <div>
-      <p className="text-sky-300 text-xs font-semibold tracking-[0.25em] uppercase">
-        Tanggal Pelaksanaan
-      </p>
+            <a
+              href="#dokumentasi"
+              className="px-8 py-4 rounded-full border border-white text-white hover:bg-white hover:text-[#1A1B5E] transition"
+            >
+              📸 Lihat Dokumentasi
+            </a>
 
-      <h3 className="text-white text-2xl md:text-3xl font-black mt-2">
-        20 Juli – 1 Agustus 2026
-      </h3>
-    </div>
+          </div>
 
-    {/* Garis */}
-    <div className="hidden md:block w-px h-14 bg-white/15"></div>
+          {/* =========================
+              INFORMASI EVENT
+          ========================== */}
 
-    {/* Lokasi */}
-    <div>
-      <p className="text-sky-300 text-xs font-semibold tracking-[0.25em] uppercase">
-        Lokasi
-      </p>
+          <div className="mt-20 max-w-3xl">
 
-      <h3 className="text-white text-xl font-bold mt-2">
-        Ngering, Jogonalan
-      </h3>
+            <div
+              className="backdrop-blur-xl rounded-3xl px-8 py-6 flex flex-col md:flex-row md:items-center md:justify-between gap-6"
+              style={{
+                background: "rgba(255,255,255,.08)",
+                border: "1px solid rgba(255,255,255,.12)",
+              }}
+            >
 
-      <p className="text-slate-300 text-sm">
-        Kabupaten Klaten
-      </p>
-    </div>
+              {/* TANGGAL */}
 
-    {/* Garis */}
-    <div className="hidden md:block w-px h-14 bg-white/15"></div>
+              <div>
 
-    {/* Event */}
-    <div>
-      <p className="text-sky-300 text-xs font-semibold tracking-[0.25em] uppercase">
-        Event
-      </p>
+                <p className="text-sky-300 text-xs font-semibold tracking-[0.25em] uppercase">
+                  Tanggal Pelaksanaan
+                </p>
 
-      <h3 className="text-white text-xl font-bold mt-2">
-        Turnamen Bola Voli Plastik
-      </h3>
-    </div>
+                <h3 className="text-white text-2xl md:text-3xl font-black mt-2">
+                  20 Juli – 1 Agustus 2026
+                </h3>
 
-  </div>
+              </div>
 
-</div>
+              {/* GARIS */}
+
+              <div className="hidden md:block w-px h-14 bg-white/15"></div>
+
+              {/* LOKASI */}
+
+              <div>
+
+                <p className="text-sky-300 text-xs font-semibold tracking-[0.25em] uppercase">
+                  Lokasi
+                </p>
+
+                <h3 className="text-white text-xl font-bold mt-2">
+                  Ngering, Jogonalan
+                </h3>
+
+                <p className="text-slate-300 text-sm">
+                  Kabupaten Klaten
+                </p>
+
+              </div>
+
+              {/* GARIS */}
+
+              <div className="hidden md:block w-px h-14 bg-white/15"></div>
+
+              {/* EVENT */}
+
+              <div>
+
+                <p className="text-sky-300 text-xs font-semibold tracking-[0.25em] uppercase">
+                  Event
+                </p>
+
+                <h3 className="text-white text-xl font-bold mt-2">
+                  Turnamen Bola Voli Plastik
+                </h3>
+
+              </div>
+
+            </div>
+
+          </div>
 
         </div>
 
