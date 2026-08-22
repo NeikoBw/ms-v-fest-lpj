@@ -21,11 +21,11 @@ const FinanceSummary = ({ data }) => {
       type: "pengeluaran",
     },
     {
-      title: "Saldo Akhir",
+      title: "Dana Dibekukan",
       value: data?.saldo || 0,
       color: "text-blue-600",
       bg: "bg-blue-50",
-      icon: "🏦",
+      icon: "🔒",
       type: "saldo",
     },
   ];
@@ -45,7 +45,9 @@ const FinanceSummary = ({ data }) => {
     >
       <div className="max-w-7xl mx-auto px-6">
 
-        {/* Header */}
+        {/* =========================
+            HEADER
+        ========================== */}
 
         <div className="text-center mb-14">
 
@@ -58,13 +60,15 @@ const FinanceSummary = ({ data }) => {
           </h2>
 
           <p className="mt-4 text-slate-500">
-            Transparansi pemasukan, pengeluaran dan saldo
-            kegiatan MS V-FEST 2026.
+            Transparansi pemasukan, pengeluaran dan
+            pengelolaan dana kegiatan MS V-FEST 2026.
           </p>
 
         </div>
 
-        {/* Cards */}
+        {/* =========================
+            CARDS
+        ========================== */}
 
         <div className="grid md:grid-cols-3 gap-8">
 
@@ -86,7 +90,9 @@ const FinanceSummary = ({ data }) => {
                 {item.title}
               </p>
 
-              <h3 className={`text-4xl font-black mt-3 ${item.color}`}>
+              <h3
+                className={`text-4xl font-black mt-3 ${item.color}`}
+              >
                 Rp{" "}
                 {Number(item.value).toLocaleString("id-ID")}
               </h3>
@@ -101,7 +107,9 @@ const FinanceSummary = ({ data }) => {
 
         </div>
 
-        {/* Progress */}
+        {/* =========================
+            PROGRESS PENGGUNAAN DANA
+        ========================== */}
 
         <div className="bg-white rounded-3xl shadow-lg p-8 mt-12">
 
@@ -129,157 +137,280 @@ const FinanceSummary = ({ data }) => {
           </div>
 
           <p className="text-slate-500 mt-3">
-            Dana yang telah digunakan dari total pemasukan.
+            Persentase dana yang telah digunakan dari total
+            pemasukan kegiatan.
           </p>
 
         </div>
 
-{/* Modal */}
+        {/* =========================
+            INFORMASI DANA DIBEKUKAN
+        ========================== */}
 
-{selected && (
-  <div
-    className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-6"
-    onClick={() => setSelected(null)}
-  >
-    <div
-      className="bg-white rounded-3xl max-w-4xl w-full max-h-[85vh] overflow-y-auto p-8"
-      onClick={(e) => e.stopPropagation()}
-    >
-      <div className="flex justify-between items-center mb-8">
-        <h2 className="text-3xl font-black text-[#1A1B5E]">
-          {selected === "pemasukan" && "Detail Pemasukan"}
-          {selected === "pengeluaran" && "Detail Pengeluaran"}
-          {selected === "saldo" && "Detail Saldo"}
-        </h2>
+        <div className="mt-10 bg-blue-50 border border-blue-100 rounded-3xl p-8">
 
-        <button
-          className="text-3xl hover:text-red-500"
-          onClick={() => setSelected(null)}
-        >
-          ×
-        </button>
-      </div>
+          <div className="flex flex-col md:flex-row items-start md:items-center gap-5">
 
-      {/* ======================= */}
-      {/* PEMASUKAN */}
-      {/* ======================= */}
+            <div className="w-16 h-16 rounded-2xl bg-white flex items-center justify-center text-3xl shadow-sm">
+              🔒
+            </div>
 
-      {selected === "pemasukan" && (
-        <table className="w-full border-collapse">
-          <thead>
-            <tr className="bg-green-100">
-              <th className="p-3 text-left">No</th>
-              <th className="p-3 text-left">Sumber Dana</th>
-              <th className="p-3 text-right">Jumlah</th>
-            </tr>
-          </thead>
+            <div>
 
-          <tbody>
-            {data.sumberDana.map((item, index) => (
-              <tr
-                key={index}
-                className="border-b hover:bg-slate-50"
-              >
-                <td className="p-3">{item["No"]}</td>
+              <h3 className="text-2xl font-black text-[#1A1B5E]">
+                Dana Dibekukan untuk Kegiatan Berikutnya
+              </h3>
 
-                <td className="p-3">
-                  {item["Sumber Dana"]}
-                </td>
+              <p className="text-slate-600 mt-2 leading-relaxed">
+                Saldo akhir kegiatan tidak dibagikan kepada
+                panitia maupun pihak lainnya. Dana tersebut
+                dibekukan dan akan digunakan sebagai modal awal
+                untuk mendukung penyelenggaraan kegiatan
+                berikutnya.
+              </p>
 
-                <td className="p-3 text-right font-semibold text-green-600">
-                  {item["Jumlah"]}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
+            </div>
 
-      {/* ======================= */}
-      {/* PENGELUARAN */}
-      {/* ======================= */}
-
-      {selected === "pengeluaran" && (
-        <table className="w-full border-collapse">
-          <thead>
-            <tr className="bg-red-100">
-              <th className="p-3 text-left">No</th>
-              <th className="p-3 text-left">Nama</th>
-              <th className="p-3 text-left">Tanggal</th>
-              <th className="p-3 text-right">Nominal</th>
-            </tr>
-          </thead>
-
-          <tbody>
-            {data.pengeluaran.map((item, index) => (
-              <tr
-                key={index}
-                className="border-b hover:bg-slate-50"
-              >
-                <td className="p-3">{item["No"]}</td>
-
-                <td className="p-3">
-                  {item["Nama"]}
-                </td>
-
-                <td className="p-3">
-                  {item["Tanggal"]}
-                </td>
-
-                <td className="p-3 text-right font-semibold text-red-600">
-                  {item["Nominal"]}
-                </td>
-              </tr>
-            ))}
-          </tbody>
-        </table>
-      )}
-
-      {selected === "saldo" && (
-        <div className="space-y-5">
-
-          <div className="flex justify-between p-5 rounded-xl bg-slate-100">
-            <span className="font-semibold">
-              Kas Mardisantoso
-            </span>
-
-            <span className="font-bold text-blue-700">
-              Rp{" "}
-              {data.kasMardisantoso.toLocaleString(
-                "id-ID"
-              )}
-            </span>
-          </div>
-
-          <div className="flex justify-between p-5 rounded-xl bg-slate-100">
-            <span className="font-semibold">
-              Kas Satria Muda
-            </span>
-
-            <span className="font-bold text-blue-700">
-              Rp{" "}
-              {data.kasSatriaMuda.toLocaleString(
-                "id-ID"
-              )}
-            </span>
-          </div>
-
-          <div className="flex justify-between p-6 rounded-xl bg-blue-100 text-2xl">
-            <span className="font-black">
-              Total Saldo
-            </span>
-
-            <span className="font-black text-blue-700">
-              Rp{" "}
-              {data.saldo.toLocaleString("id-ID")}
-            </span>
           </div>
 
         </div>
-      )}
-    </div>
-  </div>
-)}
+
+        {/* =========================
+            MODAL
+        ========================== */}
+
+        {selected && (
+
+          <div
+            className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center z-50 p-6"
+            onClick={() => setSelected(null)}
+          >
+
+            <div
+              className="bg-white rounded-3xl max-w-4xl w-full max-h-[85vh] overflow-y-auto p-8"
+              onClick={(e) => e.stopPropagation()}
+            >
+
+              {/* HEADER MODAL */}
+
+              <div className="flex justify-between items-center mb-8">
+
+                <h2 className="text-3xl font-black text-[#1A1B5E]">
+
+                  {selected === "pemasukan" &&
+                    "Detail Pemasukan"}
+
+                  {selected === "pengeluaran" &&
+                    "Detail Pengeluaran"}
+
+                  {selected === "saldo" &&
+                    "Detail Dana Dibekukan"}
+
+                </h2>
+
+                <button
+                  className="text-3xl hover:text-red-500"
+                  onClick={() => setSelected(null)}
+                >
+                  ×
+                </button>
+
+              </div>
+
+              {/* =========================
+                  PEMASUKAN
+              ========================== */}
+
+              {selected === "pemasukan" && (
+
+                <table className="w-full border-collapse">
+
+                  <thead>
+
+                    <tr className="bg-green-100">
+
+                      <th className="p-3 text-left">
+                        No
+                      </th>
+
+                      <th className="p-3 text-left">
+                        Sumber Dana
+                      </th>
+
+                      <th className="p-3 text-right">
+                        Jumlah
+                      </th>
+
+                    </tr>
+
+                  </thead>
+
+                  <tbody>
+
+                    {data.sumberDana.map((item, index) => (
+
+                      <tr
+                        key={index}
+                        className="border-b hover:bg-slate-50"
+                      >
+
+                        <td className="p-3">
+                          {item["No"]}
+                        </td>
+
+                        <td className="p-3">
+                          {item["Sumber Dana"]}
+                        </td>
+
+                        <td className="p-3 text-right font-semibold text-green-600">
+                          {item["Jumlah"]}
+                        </td>
+
+                      </tr>
+
+                    ))}
+
+                  </tbody>
+
+                </table>
+
+              )}
+
+              {/* =========================
+                  PENGELUARAN
+              ========================== */}
+
+              {selected === "pengeluaran" && (
+
+                <table className="w-full border-collapse">
+
+                  <thead>
+
+                    <tr className="bg-red-100">
+
+                      <th className="p-3 text-left">
+                        No
+                      </th>
+
+                      <th className="p-3 text-left">
+                        Nama
+                      </th>
+
+                      <th className="p-3 text-left">
+                        Tanggal
+                      </th>
+
+                      <th className="p-3 text-right">
+                        Nominal
+                      </th>
+
+                    </tr>
+
+                  </thead>
+
+                  <tbody>
+
+                    {data.pengeluaran.map((item, index) => (
+
+                      <tr
+                        key={index}
+                        className="border-b hover:bg-slate-50"
+                      >
+
+                        <td className="p-3">
+                          {item["No"]}
+                        </td>
+
+                        <td className="p-3">
+                          {item["Nama"]}
+                        </td>
+
+                        <td className="p-3">
+                          {item["Tanggal"]}
+                        </td>
+
+                        <td className="p-3 text-right font-semibold text-red-600">
+                          {item["Nominal"]}
+                        </td>
+
+                      </tr>
+
+                    ))}
+
+                  </tbody>
+
+                </table>
+
+              )}
+
+              {/* =========================
+                  DANA DIBEKUKAN
+              ========================== */}
+
+              {selected === "saldo" && (
+
+                <div className="space-y-5">
+
+                  {/* STATUS DANA */}
+
+                  <div className="p-6 rounded-2xl bg-blue-50 border border-blue-100">
+
+                    <div className="flex items-center gap-4">
+
+                      <div className="w-14 h-14 rounded-xl bg-white flex items-center justify-center text-2xl">
+                        🔒
+                      </div>
+
+                      <div>
+
+                        <p className="text-sm text-slate-500">
+                          Status Dana
+                        </p>
+
+                        <p className="text-xl font-black text-[#1A1B5E]">
+                          Dibekukan
+                        </p>
+
+                      </div>
+
+                    </div>
+
+                    <p className="text-slate-600 mt-5 leading-relaxed">
+                      Dana ini tidak dibagikan sebagai hasil
+                      kegiatan. Seluruh saldo akhir ditetapkan
+                      sebagai modal awal untuk mendukung
+                      pelaksanaan kegiatan berikutnya.
+                    </p>
+
+                  </div>
+
+                  {/* TOTAL DANA */}
+
+                  <div className="flex justify-between items-center p-6 rounded-xl bg-blue-100">
+
+                    <span className="font-black text-xl">
+                      Saldo Akhir
+                    </span>
+
+                    <span className="font-black text-2xl text-blue-700">
+                      Rp{" "}
+                      {Number(
+                        data.saldo || 0
+                      ).toLocaleString("id-ID")}
+                    </span>
+
+                  </div>
+
+                </div>
+
+              )}
+
+            </div>
+
+          </div>
+
+        )}
+
       </div>
     </section>
   );
